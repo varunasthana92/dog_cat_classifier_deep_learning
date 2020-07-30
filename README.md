@@ -6,7 +6,8 @@ git clone https://github.com/varunasthana92/dog_cat_classifier_deep_learning.git
 ```
 
 Dataset: kaggle
-link: https://www.kaggle.com/c/dogs-vs-cats/data
+
+Link: https://www.kaggle.com/c/dogs-vs-cats/data
 
 
 A subset of data (of 2000 train images and 100 validation images) can be download by following the below instructions. Download the data set in a folder named 'Data' and extract the zip file
