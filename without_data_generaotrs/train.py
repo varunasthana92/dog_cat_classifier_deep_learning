@@ -200,7 +200,7 @@ def train(ImgPH, LabelPH, lr, img_size, MiniBatchSize, NumEpochs, BasePath, DirN
 
 def main():
     Parser = argparse.ArgumentParser()
-    Parser.add_argument('--BasePath', default='../../Data/dogs-vs-cats/', help='Base path of images')
+    Parser.add_argument('--BasePath', default='../Data/dogs-vs-cats/', help='Base path of images')
     Parser.add_argument('--CheckPointPath', default='./Checkpoints/', help='Path to save Checkpoints, Default: ../Checkpoints/')
     Parser.add_argument('--NumEpochs', type=int, default=1, help='Number of Epochs to Train for, Default:50')
     Parser.add_argument('--DivTrain', type=int, default=1, help='Factor to reduce Train data by per epoch, Default:1')
