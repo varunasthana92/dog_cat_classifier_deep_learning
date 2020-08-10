@@ -9,12 +9,9 @@ Dataset: kaggle
 
 Link: https://www.kaggle.com/c/dogs-vs-cats/data
 
+This version of implementation uses the tensorflow API of DataGenerators which auto generators the labels based on the heriarchy of the data, for ex. images for CATs and DOGs are stored in separate folders.
 
-A subset of data (of 2000 train images and 100 validation images) can be download by following the below instructions. Download the data set in a folder named 'Data' and extract the zip file
-```
-mkdir Data
-wget --no-check-certificate https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip  -O ./Data/cats_and_dogs_filtered.zip
-```
+Model is compiled and trained using keras.models API
 
-Put this directory 'Data' at the same location where the repository has been cloned (or extracted)
+A subset of data (of 2000 train images and 1000 validation images) is provided in the Data/cats_and_dogs_filtered sub-directory.
 
