@@ -55,7 +55,7 @@ def train(model, lr, img_size, batch_size, num_epochs, train_dir, validation_dir
 
 
 def main():
-    base_dir = '../Data/cats_and_dogs_filtered'
+    base_dir = '../../Data/cats_and_dogs_filtered'
     train_dir, validation_dir, train_cats_dir, train_dogs_dir, validation_cats_dir, validation_dogs_dir, train_cat_fnames, train_dog_fnames = data_gen(base_dir)
     # show_imgs(train_cat_fnames, train_dog_fnames, train_cats_dir, train_dogs_dir, 10)
 
