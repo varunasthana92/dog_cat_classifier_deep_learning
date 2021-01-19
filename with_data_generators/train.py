@@ -36,7 +36,7 @@ def pre_process(img_size, batch_size, train_dir, validation_dir):
     return train_generator, validation_generator
 
 
-def train(model, lr, img_size, batch_size, num_epochs, train_dir, validation_dir, train_data_size, CheckPointPath):
+def train(model, lr, img_size, batch_size, num_epochs, train_dir, validation_dir, train_data_size, CheckPointPath, LogsPath):
     # NOTE: In this case, using the RMSprop optimization algorithm is preferable to
     # stochastic gradient descent (SGD), because RMSprop automates learning-rate tuning
     # for us. (Other optimizers, such as Adam and Adagrad, also automatically adapt the
@@ -53,6 +53,9 @@ def train(model, lr, img_size, batch_size, num_epochs, train_dir, validation_dir
     # Create a callback that saves the model's weights every epoch
     CheckPointCallback = tfk.callbacks.ModelCheckpoint(filepath=CheckPointPath, verbose=1, save_weights_only=True, save_freq='epoch')
 
+    # TensorBoard Callback
+    TensorBoardCallback = tfk.callbacks.TensorBoard(log_dir=LogsPath, histogram_freq=1, write_graph=True, update_freq=1, profile_batch=2, embeddings_freq=1)
+
     model.save_weights(CheckPointPath.format(epoch=0))
     # with verbose = 2 we will see 4 values per epoch -- Loss, Accuracy, Validation Loss and Validation Accuracy
     # but training progress bar will not be visible
@@ -61,9 +64,8 @@ def train(model, lr, img_size, batch_size, num_epochs, train_dir, validation_dir
                                   steps_per_epoch = train_data_size / batch_size,
                                   epochs= num_epochs,
                                   validation_steps= 50,
-                                  callbacks=[CheckPointCallback])
+                                  callbacks=[CheckPointCallback, TensorBoardCallback])
                                   # verbose=2)
-
 
 def main():
     # is_gpu = len(tf.config.list_physical_devices('GPU')) > 0
@@ -72,6 +74,7 @@ def main():
 
     base_dir = '../Data/cats_and_dogs_filtered'
     CheckPointPath = './checkpoints/'
+    LogsPath = './Logs/'
     CheckPointPath = CheckPointPath + '{epoch:04d}model.ckpt'
     train_dir, validation_dir, train_cats_dir, train_dogs_dir, validation_cats_dir, validation_dogs_dir, train_cat_fnames, train_dog_fnames = data_gen(base_dir)
     # show_imgs(train_cat_fnames, train_dog_fnames, train_cats_dir, train_dogs_dir, 10)
@@ -83,7 +86,8 @@ def main():
     model_obj = Model2(img_size)
     model = model_obj.model
     print(model.summary())
-    train(model, lr, img_size, batch_size, num_epochs, train_dir, validation_dir, len(train_cat_fnames) + len(train_dog_fnames), CheckPointPath)
+    train(model, lr, img_size, batch_size, num_epochs, train_dir, validation_dir,
+             len(train_cat_fnames) + len(train_dog_fnames), CheckPointPath, LogsPath)
 
 
 if __name__ == '__main__':
