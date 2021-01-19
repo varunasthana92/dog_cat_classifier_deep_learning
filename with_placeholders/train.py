@@ -1,6 +1,6 @@
 # import tensorflow.compat.v1 as tf
 import tensorflow as tf
-from Network import Network
+from Network import Network2
 import argparse
 import sys
 import os
@@ -90,7 +90,7 @@ def train(ImgPH, LabelPH, lr, img_size, MiniBatchSize, NumEpochs, BasePath, DirN
     Valid_Names = DirNamesTrain[int(TotalImgs*0.2):]
     Valid_Labels = TrainLabels[int(TotalImgs*0.2):]
 
-    model_obj = Network(img_size)
+    model_obj = Network2(img_size)
     print(model_obj)
     prLogits, prSoftMax = model_obj.model(ImgPH)
 
