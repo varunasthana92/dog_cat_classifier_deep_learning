@@ -18,7 +18,7 @@ A subset of data (of 2000 train images and 1000 validation images) is provided i
 
 ## Accuracy and Loss
 <p align="center">
-<img src="https://github.com/varunasthana92/dog_cat_classifier_deep_learning/blob/master/with_data_generators/images/tensor_board.png" width = 350>
+<img src="https://github.com/varunasthana92/dog_cat_classifier_deep_learning/blob/master/with_data_generators/images/tensor_board.png" width = 500>
 </p>
 
 <p align="center">

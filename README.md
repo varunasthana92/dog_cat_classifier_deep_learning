@@ -15,7 +15,7 @@ b) __Compatible with TF1__. With the use of Placeholders for more direct control
 
 ## Accuracy and Loss
 <p align="center">
-<img src="https://github.com/varunasthana92/dog_cat_classifier_deep_learning/blob/master/with_data_generators/images/tensor_board.png" width = 350>
+<img src="https://github.com/varunasthana92/dog_cat_classifier_deep_learning/blob/master/with_data_generators/images/tensor_board.png" width = 500>
 </p>
 
 <p align="center">
