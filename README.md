@@ -1,12 +1,12 @@
 # Dog and Cat Classifier Deep learning (Tensorflow)
 
-### Dataset: kaggle
+## Dataset: kaggle
 
 Link: https://www.kaggle.com/c/dogs-vs-cats/data
 
 2 different implementations have been done:<br>
 a) __Compatible with TF2__. With the use of tensorflow API of DataGenerators and keras MODEL API for training<br>
-b) __Compatible with TF1__. With the use of Placeholders for more direct control over input data, and training done using tf.session<br>
+b) __Compatible with TF1__. With the use of Placeholders for more direct control over input data, and training done using tf.session. Dataset to be maintained as in the repository.<br>
 
 ## Network Used
 <p align="center">

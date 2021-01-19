@@ -1,17 +1,12 @@
-# dog_cat_classifier_deep_learning
+# Dog and Cat Classifier Deep learning (Tensorflow)
 
-
-```
-git clone https://github.com/varunasthana92/dog_cat_classifier_deep_learning.git
-```
-
-Dataset: kaggle
+## Dataset: kaggle
 
 Link: https://www.kaggle.com/c/dogs-vs-cats/data
+<br>
 
+This version of implementation provides more flexibility and control to handle the input data by using PLACEHOLDERS for input image and lables.<br>
 
-This version of implementation provides more flexibility and control to handle the input data by using PLACEHOLDERS for input image and lables.
-
-
-All executions are done using instance of tensorflow.session()
+All executions are done using instance of tensorflow.session()<br>
+Dataset to be maintained as shown in the rrepository.<br>
 
